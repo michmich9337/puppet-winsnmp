@@ -20,6 +20,7 @@ class winsnmp (
   $services    = 76,
 ) {
   validate_array($communities)
+  validate_array($managers)
 
   $feature = 'SNMP'
   $service = 'snmp'
@@ -50,10 +51,8 @@ class winsnmp (
   # Configure all necessary community strings.
   winsnmp::community { [$communities]: }
 
-  # Set Permitted Managers.
-  if managers.empty? {
-    winsnmp::managers { [$managers] }
-  }
+  # Configure all necessary permitted managers strings.
+  winsnmp::managers { [$managers]: }
 
   # Set the standard RFC1156 objects.
   if $contact {

@@ -17,13 +17,10 @@ define winsnmp::managers (
     $type     = 'string',
 ) {
     $path = 'HKLM\SYSTEM\CurrentControlSet\services\SNMP\Parameters\PermittedManagers'
-    $managers.each { |manager|
-
-        registry_value { "${path}\\${managers.index(manager)}":
-          ensure => present,
-          type   => $type',
-          data   => '${manager}',
-          notify => Service[$winsnmp::service],
-        }
+    registry_value { "${path}\\${managers.index(manager)}":
+      ensure => present,
+      type   => $type,
+      data   => '${manager}',
+      notify => Service[$winsnmp::service],
     }
 }
