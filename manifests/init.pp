@@ -28,6 +28,10 @@ class winsnmp (
     ensure => present,
   }
 
+  dism { 'Server-RSAT-SNMP':
+    ensure => present,
+  }
+
   service { $service:
     ensure  => running,
     require => Dism[$feature],

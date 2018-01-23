@@ -8,6 +8,7 @@ describe 'winsnmp', :type => 'class' do
 
     # Feature and service.
     it { should contain_dism('SNMP') }
+    it { should contain_dism('Server-RSAT-SNMP') }
     it {
       should contain_service('snmp').with( {
         :ensure => 'running',
@@ -22,6 +23,15 @@ describe 'winsnmp', :type => 'class' do
 
     it { should contain_winsnmp__community('public') }
     it { should contain_winsnmp__community('private') }
+  end
+
+  context 'With managers strings "foo.bar" and "127.0.0.1"' do
+    let(:params) {{
+      :managers => ['foo.bar','127.0.0.1']
+    }}
+
+    it { should contain_winsnmp__community('foo.bar') }
+    it { should contain_winsnmp__community('127.0.0.1') }
   end
 
   context 'With custom contact, location and services' do
