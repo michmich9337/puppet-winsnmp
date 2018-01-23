@@ -1,0 +1,5 @@
+.project
+spec/fixtures/manifests
+spec/fixtures/modules
+pkg
+Gemfile.lock

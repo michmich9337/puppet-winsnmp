@@ -1,0 +1,7 @@
+fixtures:
+  symlinks:
+    winsnmp:  "#{source_dir}"
+  forge_modules:
+    dism:     "puppetlabs/dism"
+    registry: "puppetlabs/registry"
+    stdlib:   "puppetlabs/stdlib"
