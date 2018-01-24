@@ -54,7 +54,7 @@ class winsnmp (
   # Configure all necessary permitted managers strings. 
   # Add +1 to index value to avoid 0 array's value
   $managers.each |$index, $manager| {
-    winsnmp::managers { $managers:
+    winsnmp::managers { $manager:
       index => $index + 1
     }
   }
