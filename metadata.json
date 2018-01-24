@@ -10,8 +10,11 @@
   "tags": ["windows", "snmp"],
   "operatingsystem_support": [
     {
-    "operatingsystem":"windows",
-    "operatingsystemrelease":[ "2012 R2" ]
+      "operatingsystem":"windows",
+      "operatingsystemrelease":[ 
+        "2008 R2",
+        "2012 R2" 
+      ]
     }
   ],
   "dependencies": [
