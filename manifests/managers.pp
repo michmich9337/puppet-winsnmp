@@ -14,7 +14,7 @@
 #
 define winsnmp::managers (
     $managers = $title,
-    index,
+    $index,
     $type     = 'string',
 ) {
     $path = 'HKLM\SYSTEM\CurrentControlSet\services\SNMP\Parameters\PermittedManagers'

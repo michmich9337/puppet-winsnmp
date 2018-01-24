@@ -51,8 +51,13 @@ class winsnmp (
   # Configure all necessary community strings.
   winsnmp::community { [$communities]: }
 
-  # Configure all necessary permitted managers strings.
-  winsnmp::managers { [$managers]: }
+  # Configure all necessary permitted managers strings. 
+  # Add +1 to index value to avoid 0 array's value
+  $managers.each |$index, $manager| {
+    winsnmp::managers { $managers:
+      index = $index + 1
+    }
+  }
 
   # Set the standard RFC1156 objects.
   if $contact {
