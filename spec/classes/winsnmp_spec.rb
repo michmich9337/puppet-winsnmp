@@ -25,13 +25,13 @@ describe 'winsnmp', :type => 'class' do
     it { should contain_winsnmp__community('private') }
   end
 
-  context 'With managers strings "fqdn.foo" and "fqdn.bar"' do
+  context 'With manager strings "fqdn.foo" and "fqdn.bar"' do
     let(:params) {{
       :managers => ['fqdn.foo','fqdn.bar']
     }}
 
-    it { should contain_winsnmp__community('fqdn.foo') }
-    it { should contain_winsnmp__community('fqdn.bar') }
+    it { should contain_winsnmp__managers('fqdn.foo') }
+    it { should contain_winsnmp__managers('fqdn.bar') }
   end
 
   context 'With custom contact, location and services' do
