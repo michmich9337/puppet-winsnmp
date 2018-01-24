@@ -18,7 +18,7 @@ define winsnmp::managers (
     $type     = 'string',
 ) {
     $path = 'HKLM\SYSTEM\CurrentControlSet\services\SNMP\Parameters\PermittedManagers'
-    registry_value { "${path}\\${managers.index(manager)}":
+    registry_value { "${path}\\${index}":
       ensure => present,
       type   => $type,
       data   => '${manager}',
