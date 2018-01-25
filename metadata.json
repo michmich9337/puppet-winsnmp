@@ -1,6 +1,6 @@
 {
   "name": "michmich-winsnmp",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "author": "Florian MICHAUX",
   "license": "Apache-2.0",
   "summary": "Manages SNMP configuration under Windows.",
