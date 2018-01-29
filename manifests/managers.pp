@@ -13,15 +13,15 @@
 # Copyright 2017 Cyberspace
 #
 define winsnmp::managers (
-    $manager = $title,
     $index,
+    $manager = $title,
     $type    = 'string',
 ) {
     $path = 'HKLM\SYSTEM\CurrentControlSet\services\SNMP\Parameters\PermittedManagers'
     registry_value { "${path}\\${index}":
       ensure => present,
       type   => $type,
-      data   => '${manager}',
+      data   => "${manager}",
       notify => Service[$winsnmp::service],
     }
 }

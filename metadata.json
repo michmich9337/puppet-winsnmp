@@ -1,12 +1,12 @@
 {
   "name": "michmich-winsnmp",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "author": "Florian MICHAUX",
   "license": "Apache-2.0",
   "summary": "Manages SNMP configuration under Windows.",
   "source": "https://github.com/michmich9337/puppet-winsnmp",
-  "project_page": "https://github.com/sanoma-technology/puppet-winsnmp",
-  "issues_url": "https://github.com/sanoma-technology/puppet-winsnmp/issues",
+  "project_page": "https://github.com/michmich9337/puppet-winsnmp",
+  "issues_url": "https://github.com/michmich9337/puppet-winsnmp/issues",
   "tags": ["windows", "snmp"],
   "operatingsystem_support": [
     {
