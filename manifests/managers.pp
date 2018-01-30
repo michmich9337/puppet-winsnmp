@@ -21,7 +21,7 @@ define winsnmp::managers (
     registry_value { "${path}\\${index}":
       ensure => present,
       type   => $type,
-      data   => "${manager}",
+      data   => $manager,
       notify => Service[$winsnmp::service],
     }
 }

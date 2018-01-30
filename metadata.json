@@ -2,12 +2,17 @@
   "name": "michmich-winsnmp",
   "version": "1.0.2",
   "author": "Florian MICHAUX",
+  "summary": "Installs, configures and manages the SNMP services under Windows.",
   "license": "Apache-2.0",
-  "summary": "Manages SNMP configuration under Windows.",
   "source": "https://github.com/michmich9337/puppet-winsnmp",
   "project_page": "https://github.com/michmich9337/puppet-winsnmp",
   "issues_url": "https://github.com/michmich9337/puppet-winsnmp/issues",
-  "tags": ["windows", "snmp"],
+  "tags": ["windows", "snmp", "monitoring"],
+  "dependencies": [
+    { "name": "puppetlabs/dism" },
+    { "name": "puppetlabs/registry" },
+    { "name": "puppetlabs/stdlib" }
+  ],
   "operatingsystem_support": [
     {
       "operatingsystem":"windows",
@@ -17,9 +22,11 @@
       ]
     }
   ],
-  "dependencies": [
-    { "name": "puppetlabs/dism" },
-    { "name": "puppetlabs/registry" },
-    { "name": "puppetlabs/stdlib" }
-  ]
+  "requirements" : [
+    {
+      "name": "puppet",
+      "version_requirement": ">=2.7.20 <5.0.0"
+    }
+  ],
+  "description" : "SNMP Module for Windows Server 2008 and earlier"
 }
